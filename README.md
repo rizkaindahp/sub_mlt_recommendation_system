@@ -107,19 +107,22 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
 - Persiapan data untuk model KNN Item-Based.
 Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai berikut :
 
-    1. Filtering data buku dengan jumlah rating >= threshold (30).
-    - Dari 982.278 buku dalam dataset, hanya 293.037 buku yang mendapat rating dari lebih dari 30 pengguna, sementara sisanya memiliki interaksi yang sangat sedikit atau tidak ada (sparse data). Sparse data ini sulit diprediksi dan dapat menimbulkan noise. Untuk mengatasi hal ini serta mencegah memory error, dilakukan filtering dengan hanya menyertakan buku yang memiliki rating dari lebih dari 30 pengguna. Setelah proses ini, jumlah data yang digunakan menjadi 293.037 buku dan sudah cukup untuk membuat model rekomendasi.
+    - Filtering data buku dengan jumlah rating >= threshold (30).
+    
+    Dari 982.278 buku dalam dataset, hanya 293.037 buku yang mendapat rating dari lebih dari 30 pengguna, sementara sisanya memiliki interaksi yang sangat sedikit atau tidak ada (sparse data). Sparse data ini sulit diprediksi dan dapat menimbulkan noise. Untuk mengatasi hal ini serta mencegah memory error, dilakukan filtering dengan hanya menyertakan buku yang memiliki rating dari lebih dari 30 pengguna. Setelah proses ini, jumlah data yang digunakan menjadi 293.037 buku dan sudah cukup untuk membuat model rekomendasi.
 
-    2. Mengubah format data menjadi pivot tabel.
+    - Mengubah format data menjadi pivot tabel.
+
     Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan diubah menjadi array m x n, dengan m sebagai jumlah buku dan n sebagai jumlah pengguna. Proses ini merangkum data ke dalam pivot table, di mana judul buku menjadi indeks, ID pengguna sebagai kolom, dan rating sebagai nilai. Selanjutnya, nilai yang kosong akan diisi dengan nol. Berikut merupakan pivot tabel yang dihasilkan :
 
 ![pivot tabel (pivot tabel)](./images/pivot_table.png)
 
-    3. Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.
+    - Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.
+
     Pivot tabel yang dihasilkan memiliki ukuran 3602 x 46833 dan dapat dikategorikan sebagai sparse matrix, yaitu matriks dengan sebagian besar nilai nol. Menggunakan seluruh data dalam format float32 untuk model KNN akan sangat tidak efisien dan memakan banyak memori. Oleh karena itu, untuk meningkatkan efisiensi perhitungan dan mengurangi penggunaan memori, pivot tabel dikonversi ke dalam scipy sparse matrix.
 
 - Persiapan data untuk model Neural Network.
-Pada persiapan data untuk model Neural Network.terdiri dari 2 tahapan sebagai berikut :
+Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
 
     1. Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
     Pada tahap ini akan dilakukan proses encoding yaitu proses mengubah data non-numerik menjadi data numerik agar model dapat memproses data tersebut. Pada proyek ini, proses encoding dilakukan pada fitur user_id dan isbn dengan memanfaatkan fungsi enumerate. Kemudian memetakan user_id dan isbn ke dataframe yang berkaitan.
