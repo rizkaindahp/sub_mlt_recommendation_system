@@ -124,10 +124,16 @@ Pada persiapan data untuk model Neural Network.terdiri dari 2 tahapan sebagai be
 
 
 ## Modeling
-Proses modeling yang saya lakukan pada data ini adalah dengan membuat algoritma machine learning, yaitu content based filtering dan collabrative filtering.
-### KNN
+Proses modeling yang saya lakukan pada data ini adalah dengan membuat algoritma machine learning, yaitu content based filtering dan collabrative filtering. Pada proyek ini sistem rekomendasi yang dibuat menggunakan teknik collaborative filtering dengan menggunakan 2 pendekatan yaitu pendekatan Item-Based dengan algoritma K-Nearest Neighbor dan pendekatan Deep learning atau Neural Network.
 
-### Neural Network 
+### Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
+Untuk membangun model ini, digunakan fungsi NearestNeighbor dari sklearn dengan parameter metriksnya yakni 'cosine' sehingga algoritma akan menghitung kesamaan cosinus antara vektor rating dan juga parameter algoritma yang digunakan untuk menghitung tetangga terdekat adalah 'brute'. Kemudian fungsi tersebut di inisialisasikan sebagai model_knn yang selanjutnya dilakukan fitting terhadap data yang berupa sparse matrix. Setelah itu dibuat fungsi recomend_book untuk memberikan rekomendasi terhadap suatu judul buku. Hasil rekomendasinya adalah seperti berikut :
+
+![KNN (KNN)](./images/knn_rekomendasi.png)
+
+Dengan model KNN, kita mendapatkan 10 buku hasil rekomendasi terhadap buku dengan judul 'shes come undone oprahs book club' dengan distance > 0.90
+
+### Dengan pendekatan Deep learning atau Neural Network.
 Untuk membangun model ini, digunakan pendekatan Deep Learning dengan Neural Network untuk menghitung skor kecocokan antara pengguna dan buku menggunakan teknik embedding.
 Prosesnya dimulai dengan embedding pada data user dan buku, kemudian dilakukan perkalian dot product antara keduanya untuk menentukan tingkat kesesuaian. Selain itu, ditambahkan bias untuk setiap user dan buku guna meningkatkan akurasi prediksi. Skor kecocokan kemudian ditetapkan dalam skala [0,1] menggunakan fungsi aktivasi sigmoid.
 
@@ -145,7 +151,7 @@ Berikut hasil dari penggunaaan RecommenderNet:
 ## Evaluation
 Pada proyek ini menggunakan metrik RMSE (Root Mean Square Error) untuk mengevaluasi kinerja model yang dihasilkan. RMSE adalah cara standar untuk mengukur kesalahan model dalam memprediksi data kuantitatif [2]. Root Mean Squared Error (RMSE) mengevaluasi model regresi linear dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan. Perhitungan RMSE ditunjukkan pada rumus berikut ini.
 
-[rmse](https://camo.githubusercontent.com/fb3074371fe1d8136465f041c4202109b7d7d019a53062738ec1f3d06394c1dd/68747470733a2f2f692e706f7374696d672e63632f74676a666e745a6b2f524d53452e706e67),
+[rmse](https://camo.githubusercontent.com/fb3074371fe1d8136465f041c4202109b7d7d019a53062738ec1f3d06394c1dd/68747470733a2f2f692e706f7374696d672e63632f74676a666e745a6b2f524d53452e706e67)
 
 `RMSE` = nilai root mean square error
 
