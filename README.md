@@ -76,20 +76,25 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
 -  Top 10 dari Tahun Penerbitan, Penulis dan Buku
 
     1. Berdasarkan Top 10 Tahun Penerbitan
+
     ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 buku by penerbit)](./images/top_ten_thn_penerbitan.png)
 
     Pada gambar diatas dapat disimpulkan:
     - Dari hasil visualisasi diatas didapatkan informasi top 10 tahun penerbitan yaitu tahun 1995, 1996, 1997, 1994, 1998, 2000, 2003, 1999, 2001 dan 2002.
     - Untuk tahun penerbitan tertinggi berada pada tahun 2002 dengan jumlah bukunya mencapai 87.088k.
     
+    
     2. Berdasarkan Top 10 Tahun Penulis
+
     ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 penulis)](./images/top_ten_thn_penulis.png)
 
     Pada gambar diatas dapat disimpulkan:
     - Berdasarkan hasil visualisasi, diperoleh informasi bahwa 10 penulis favorit dengan jumlah buku terbanyak adalah Janet Evanovich, Sue Grafton, Danielle Steel, Tom Clancy, Dean R. Koontz, Mary Higgins Clark, James Patterson, John Grisham, Nora Roberts, dan Stephen King.
     - Stephen King menempati posisi pertama sebagai penulis dengan jumlah buku terbanyak, dengan total 9.679 buku yang telah diterbitkan.
 
+
     3. Distribusi Umur Pengguna
+
     ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 buku by rating terbanyak)](./images/distribusi_umur.png)
 
     Pada gambar diatas dapat disimpulkan:
