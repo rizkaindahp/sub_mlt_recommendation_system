@@ -149,7 +149,7 @@ Berikut hasil dari penggunaaan RecommenderNet:
 
 
 ## Evaluation
-Pada proyek ini menggunakan metrik RMSE (Root Mean Square Error) untuk mengevaluasi kinerja model yang dihasilkan. RMSE adalah cara standar untuk mengukur kesalahan model dalam memprediksi data kuantitatif [2]. Root Mean Squared Error (RMSE) mengevaluasi model regresi linear dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan. Perhitungan RMSE ditunjukkan pada rumus berikut ini.
+Pada proyek ini menggunakan metrik RMSE (Root Mean Square Error) untuk mengevaluasi kinerja model yang dihasilkan. RMSE adalah cara standar untuk mengukur kesalahan model dalam memprediksi data kuantitatif. Root Mean Squared Error (RMSE) mengevaluasi model regresi linear dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan. Perhitungan RMSE ditunjukkan pada rumus berikut ini.
 
 ![RMSE (RMSE)](./images/rmse.png)
 
@@ -185,3 +185,4 @@ Nilai RMSE yang diperoleh menunjukkan bahwa model memiliki kinerja yang baik dal
 - Jacob Murel Ph.D., https://www.ibm.com/think/topics/content-based-filtering?utm_source=chatgpt.com
 - https://developers.google.com/machine-learning/recommendation/collaborative/basics
 - https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html
+- https://www.neliti.com/publications/469572/analisis-perbandingan-model-matrix-factorization-dan-k-nearest-neighbor-dalam-me?utm_source
