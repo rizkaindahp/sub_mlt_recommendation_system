@@ -86,7 +86,7 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
 
     2. Berdasarkan Top 10 Tahun Penulis
 
-    ![Top 10 dari Penulis (Top 10 penulis)](.images/top_ten_penulis.png)
+    ![Top 10 penulis](https://github.com/user-attachments/assets/473d9f77-85ad-4e42-b325-79c41f2c3108)
 
     Pada gambar diatas dapat disimpulkan:
     - Berdasarkan hasil visualisasi, diperoleh informasi bahwa 10 penulis favorit dengan jumlah buku terbanyak adalah Janet Evanovich, Sue Grafton, Danielle Steel, Tom Clancy, Dean R. Koontz, Mary Higgins Clark, James Patterson, John Grisham, Nora Roberts, dan Stephen King.
