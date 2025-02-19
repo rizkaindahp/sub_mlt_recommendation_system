@@ -72,7 +72,7 @@ Dalam proyek ini dataset yang sudah di persiapkan selanjutkan akan dibersihkan. 
 - Menghapus data yang missing value. Beberapa fitur/column yang memiliki data kosong/Null/NA kita akan hapus supaya data lebih akurat/
 - Melakukan text cleaning pada data
 ### EDA 
-Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang bisa kita dapatkan dengan menampilkan ddengan visualisasi chart.
+Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang bisa kita dapatkan dengan menampilkan dengan visualisasi chart.
 -  Top 10 dari Tahun Penerbitan, Penulis dan Buku
 
     1. Berdasarkan Top 10 Tahun Penerbitan
@@ -83,10 +83,10 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
     - Dari hasil visualisasi diatas didapatkan informasi top 10 tahun penerbitan yaitu tahun 1995, 1996, 1997, 1994, 1998, 2000, 2003, 1999, 2001 dan 2002.
     - Untuk tahun penerbitan tertinggi berada pada tahun 2002 dengan jumlah bukunya mencapai 87.088k.
     
-    
+
     2. Berdasarkan Top 10 Tahun Penulis
 
-    ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 penulis)](./images/top_ten_thn_penulis.png)
+    ![Top 10 dari Penulis (Top 10 penulis)](.images/top_ten_penulis.png)
 
     Pada gambar diatas dapat disimpulkan:
     - Berdasarkan hasil visualisasi, diperoleh informasi bahwa 10 penulis favorit dengan jumlah buku terbanyak adalah Janet Evanovich, Sue Grafton, Danielle Steel, Tom Clancy, Dean R. Koontz, Mary Higgins Clark, James Patterson, John Grisham, Nora Roberts, dan Stephen King.
