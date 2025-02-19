@@ -151,7 +151,7 @@ Berikut hasil dari penggunaaan RecommenderNet:
 ## Evaluation
 Pada proyek ini menggunakan metrik RMSE (Root Mean Square Error) untuk mengevaluasi kinerja model yang dihasilkan. RMSE adalah cara standar untuk mengukur kesalahan model dalam memprediksi data kuantitatif [2]. Root Mean Squared Error (RMSE) mengevaluasi model regresi linear dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan. Perhitungan RMSE ditunjukkan pada rumus berikut ini.
 
-[rmse](https://camo.githubusercontent.com/fb3074371fe1d8136465f041c4202109b7d7d019a53062738ec1f3d06394c1dd/68747470733a2f2f692e706f7374696d672e63632f74676a666e745a6b2f524d53452e706e67)
+![RMSE (RMSE)](./images/rmse.png)
 
 `RMSE` = nilai root mean square error
 
