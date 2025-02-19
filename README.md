@@ -75,60 +75,72 @@ Dalam proyek ini dataset yang sudah di persiapkan selanjutkan akan dibersihkan. 
 Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang bisa kita dapatkan dengan menampilkan dengan visualisasi chart.
 -  Top 10 dari Tahun Penerbitan, Penulis dan Buku
 
-    1. Berdasarkan Top 10 Tahun Penerbitan
+    - Berdasarkan Top 10 Tahun Penerbitan
 
-    ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 buku by penerbit)](./images/top_ten_thn_penerbitan.png)
-
-    Pada gambar diatas dapat disimpulkan:
-    - Dari hasil visualisasi diatas didapatkan informasi top 10 tahun penerbitan yaitu tahun 1995, 1996, 1997, 1994, 1998, 2000, 2003, 1999, 2001 dan 2002.
-    - Untuk tahun penerbitan tertinggi berada pada tahun 2002 dengan jumlah bukunya mencapai 87.088k.
+        ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 buku by penerbit)](./images/top_ten_thn_penerbitan.png)
+    
+        Pada gambar diatas dapat disimpulkan:
+       
+        - Dari hasil visualisasi diatas didapatkan informasi top 10 tahun penerbitan yaitu tahun 1995, 1996, 1997, 1994, 1998, 2000, 2003, 1999, 2001 dan 2002.
+        - Untuk tahun penerbitan tertinggi berada pada tahun 2002 dengan jumlah bukunya mencapai 87.088k.
     
 
-    2. Berdasarkan Top 10 Tahun Penulis
+    - Berdasarkan Top 10 Tahun Penulis
 
-    ![Top 10 penulis](https://github.com/user-attachments/assets/473d9f77-85ad-4e42-b325-79c41f2c3108)
+        ![Top 10 penulis](https://github.com/user-attachments/assets/473d9f77-85ad-4e42-b325-79c41f2c3108)
+    
+        Pada gambar diatas dapat disimpulkan:
+        - Berdasarkan hasil visualisasi, diperoleh informasi bahwa 10 penulis favorit dengan jumlah buku terbanyak adalah Janet Evanovich, Sue Grafton, Danielle Steel, Tom Clancy, Dean R. Koontz, Mary Higgins Clark, James Patterson, John Grisham, Nora Roberts, dan                Stephen King.
+        - Stephen King menempati posisi pertama sebagai penulis dengan jumlah buku terbanyak, dengan total 9.679 buku yang telah diterbitkan.
 
-    Pada gambar diatas dapat disimpulkan:
-    - Berdasarkan hasil visualisasi, diperoleh informasi bahwa 10 penulis favorit dengan jumlah buku terbanyak adalah Janet Evanovich, Sue Grafton, Danielle Steel, Tom Clancy, Dean R. Koontz, Mary Higgins Clark, James Patterson, John Grisham, Nora Roberts, dan Stephen King.
-    - Stephen King menempati posisi pertama sebagai penulis dengan jumlah buku terbanyak, dengan total 9.679 buku yang telah diterbitkan.
 
+    - Distribusi Umur Pengguna
 
-    3. Distribusi Umur Pengguna
-
-    ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 buku by rating terbanyak)](./images/distribusi_umur.png)
-
-    Pada gambar diatas dapat disimpulkan:
-    - Berdasarkan hasil visualisasi di atas didapatkan informasi bahwa umur pengguna/user berada pada rentang 5 - 99 tahun.
-    - Pada hasil visualisai juga terlihat sebagian besar pengguna berada pada kisaran 30-34 tahun dengan jumlah pengguna terbanyak.
+        ![Top 10 dari penerbitan, Penulis dan Buku (Top 10 buku by rating terbanyak)](./images/distribusi_umur.png)
+    
+        Pada gambar diatas dapat disimpulkan:
+        - Berdasarkan hasil visualisasi di atas didapatkan informasi bahwa umur pengguna/user berada pada rentang 5 - 99 tahun.
+        - Pada hasil visualisai juga terlihat sebagian besar pengguna berada pada kisaran 30-34 tahun dengan jumlah pengguna terbanyak.
 
 
 
 ## Data Preparation
-- Persiapan data untuk model KNN Item-Based.
+1. Persiapan data untuk model KNN Item-Based.
 Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai berikut :
 
     - Filtering data buku dengan jumlah rating >= threshold (30).
+        
+      Dari 982.278 buku dalam dataset, hanya 293.037 buku yang mendapat rating dari lebih dari 30 pengguna, sementara sisanya memiliki interaksi yang sangat sedikit atau tidak ada (sparse data). Sparse data ini sulit diprediksi dan dapat menimbulkan noise. Untuk 
+      mengatasi hal ini serta mencegah memory error, dilakukan filtering dengan hanya menyertakan buku yang memiliki rating dari lebih dari 30 pengguna. Setelah proses ini, jumlah data yang digunakan menjadi 293.037 buku dan sudah cukup untuk membuat model rekomendasi.
     
-    Dari 982.278 buku dalam dataset, hanya 293.037 buku yang mendapat rating dari lebih dari 30 pengguna, sementara sisanya memiliki interaksi yang sangat sedikit atau tidak ada (sparse data). Sparse data ini sulit diprediksi dan dapat menimbulkan noise. Untuk mengatasi hal ini serta mencegah memory error, dilakukan filtering dengan hanya menyertakan buku yang memiliki rating dari lebih dari 30 pengguna. Setelah proses ini, jumlah data yang digunakan menjadi 293.037 buku dan sudah cukup untuk membuat model rekomendasi.
-
     - Mengubah format data menjadi pivot tabel.
+    
+      Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan diubah menjadi array m x n, dengan m sebagai jumlah buku dan n 
+      sebagai jumlah pengguna. Proses ini merangkum data ke dalam pivot table, di mana judul buku menjadi indeks, ID pengguna sebagai kolom, dan rating sebagai nilai. Selanjutnya, nilai yang kosong akan diisi dengan nol. Berikut merupakan pivot tabel yang dihasilkan :
 
-    Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan diubah menjadi array m x n, dengan m sebagai jumlah buku dan n sebagai jumlah pengguna. Proses ini merangkum data ke dalam pivot table, di mana judul buku menjadi indeks, ID pengguna sebagai kolom, dan rating sebagai nilai. Selanjutnya, nilai yang kosong akan diisi dengan nol. Berikut merupakan pivot tabel yang dihasilkan :
 
-![pivot tabel (pivot tabel)](./images/pivot_table.png)
+    ![pivot tabel (pivot tabel)](./images/pivot_table.png)
+
 
     - Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.
+      
+      Pivot tabel yang dihasilkan memiliki ukuran 3602 x 46833 dan dapat dikategorikan sebagai sparse matrix, yaitu matriks dengan sebagian besar nilai nol. Menggunakan seluruh data dalam format float32 untuk model KNN akan sangat tidak efisien dan memakan banyak     
+      memori. Oleh karena itu, untuk meningkatkan efisiensi perhitungan dan mengurangi penggunaan memori, pivot tabel dikonversi ke dalam scipy sparse matrix.
+    
 
-    Pivot tabel yang dihasilkan memiliki ukuran 3602 x 46833 dan dapat dikategorikan sebagai sparse matrix, yaitu matriks dengan sebagian besar nilai nol. Menggunakan seluruh data dalam format float32 untuk model KNN akan sangat tidak efisien dan memakan banyak memori. Oleh karena itu, untuk meningkatkan efisiensi perhitungan dan mengurangi penggunaan memori, pivot tabel dikonversi ke dalam scipy sparse matrix.
-
-- Persiapan data untuk model Neural Network.
+2. Persiapan data untuk model Neural Network.
 Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
 
-    1. Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
-    Pada tahap ini akan dilakukan proses encoding yaitu proses mengubah data non-numerik menjadi data numerik agar model dapat memproses data tersebut. Pada proyek ini, proses encoding dilakukan pada fitur user_id dan isbn dengan memanfaatkan fungsi enumerate. Kemudian memetakan user_id dan isbn ke dataframe yang berkaitan.
+    - Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
 
-    2. Pembagian Data untuk Training dan Validasi.
-    Pada tahap ini kita akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, kita perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu value, lalu membuat variabel y untuk membuat rating dari hasil. Setelah itu membagi menjadi 80% data train dan 20% data validasi. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data train yaitu 785823 sampel dan jumlah sample pada data validasi yaitu 196456 sampel.
+      Pada tahap ini akan dilakukan proses encoding yaitu proses mengubah data non-numerik menjadi data numerik agar model dapat memproses data tersebut. Pada proyek ini, proses encoding dilakukan pada fitur user_id dan isbn dengan memanfaatkan fungsi enumerate. 
+      Kemudian memetakan user_id dan isbn ke dataframe yang berkaitan.
+
+    - Pembagian Data untuk Training dan Validasi.
+
+      Pada tahap ini kita akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, kita perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu 
+      value, lalu membuat variabel y untuk membuat rating dari hasil. Setelah itu membagi menjadi 80% data train dan 20% data validasi. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data train yaitu 785823 sampel dan jumlah sample pada data 
+      validasi yaitu 196456 sampel.
 
 
 ## Modeling
