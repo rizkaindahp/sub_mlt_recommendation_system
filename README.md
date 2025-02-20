@@ -128,20 +128,20 @@ Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supa
 Pada tahap text cleaning ini membantu pembersihan text pada kolom atau fitur *Category* dan *book_title*.
 Di bagian fitur *Category* mengganti simbol | (delimiter kategori) dengan spasi sehingga kategori lebih mudah dibaca. Sedangkan di bagian *book_title* karena masih belum seragam dan mengandung karakter yang tidak diperlukan, sehingga proses pembersihan teks (text cleaning) perlu dilakukan. Tahapan yang diterapkan meliputi mengubah teks menjadi huruf kecil (lowercase), menghapus teks dalam tanda kurung siku, menghapus tautan (links), menghilangkan tanda baca (punctuation), menghilangkan links, menghilangkan tag, menghilangkan mentions pada text serta menghapus angka.
     
-### Persiapan data untuk model Neural Network.
+### Persiapan data untuk model Neural Network
 
-    Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
+Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut:
 
-    - Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
+- Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
 
-      Pada tahap ini akan dilakukan proses encoding yaitu proses mengubah data non-numerik menjadi data numerik agar model dapat memproses data tersebut. Pada proyek ini, proses encoding dilakukan pada fitur user_id dan isbn dengan memanfaatkan fungsi enumerate. 
-      Kemudian memetakan user_id dan isbn ke dataframe yang berkaitan.
+  Pada tahap ini akan dilakukan proses encoding yaitu proses mengubah data non-numerik menjadi data numerik agar model dapat memproses data tersebut. Pada proyek ini, proses encoding dilakukan pada fitur user_id dan isbn dengan memanfaatkan fungsi enumerate. 
+  Kemudian memetakan user_id dan isbn ke dataframe yang berkaitan.
 
-    - Pembagian Data untuk Training dan Validasi.
+- Pembagian Data untuk Training dan Validasi.
 
-      Pada tahap ini akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu 
-      value, lalu membuat variabel y untuk membuat rating dari hasil. Setelah itu membagi menjadi 80% data train dan 20% data validasi. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data train yaitu 785823 sampel dan jumlah sample pada data 
-      validasi yaitu 196456 sampel.
+  Pada tahap ini akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu 
+  value, lalu membuat variabel y untuk membuat rating dari hasil. Setelah itu membagi menjadi 80% data train dan 20% data validasi. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data train yaitu 785823 sampel dan jumlah sample pada data 
+  validasi yaitu 196456 sampel.
 
 
 ## Modeling
