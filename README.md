@@ -1,24 +1,26 @@
 # Laporan Proyek Machine Learning - Rizka Indah Puspita
 
 ## Project Overview
-Buku merupakan sumber ilmu terbaik untuk memperluas wawasan, meningkatkan keterampilan berpikir kritis dan mendapatkan hiburan. Namun, dengan banyaknya pilihan buku yang tersedia, menemukan buku yang sesuai dengan preferensi dan kebutuhan pengguna bisa menjadi tantangan. Oleh karena itu, sistem rekomendasi buku hadir sebagai solusi untuk membantu pengguna menemukan buku yang sesuai dengan minat mereka.[[1]](https://kumparan.com/muhammad-yusuf-ardiansyah/buku-sebagai-sarana-penting-untuk-membangun-karakter-dan-pengetahuan-23Tqe8Z1AUN/full?utm_source=chatgpt.com)
+Buku merupakan sumber ilmu terbaik untuk memperluas wawasan, meningkatkan keterampilan berpikir kritis dan mendapatkan hiburan. Namun, dengan banyaknya pilihan buku yang tersedia, menemukan buku yang sesuai dengan preferensi dan kebutuhan pengguna bisa menjadi tantangan. Oleh karena itu, sistem rekomendasi buku hadir sebagai solusi untuk membantu pengguna menemukan buku yang sesuai dengan minat mereka [[1]](https://kumparan.com/muhammad-yusuf-ardiansyah/buku-sebagai-sarana-penting-untuk-membangun-karakter-dan-pengetahuan-23Tqe8Z1AUN/full?utm_source=chatgpt.com).
 
-Proyek "Rekomendasi Buku untuk Pengguna" bertujuan untuk mengembangkan sistem yang dapat memberikan rekomendasi buku berdasarkan berbagai faktor, seperti genre favorit, ulasan pengguna, popularitas, dan preferensi pribadi. Dengan menerapkan teknik berbasis data, seperti algoritma machine learning atau filtering berbasis konten dan kolaboratif, sistem ini diharapkan dapat memberikan rekomendasi yang lebih akurat dan relevan bagi setiap pengguna.[[2]](https://ejournal.undip.ac.id/index.php/jmasif/article/view/31482?utm_source=chatgpt.com)
+Proyek "Rekomendasi Buku untuk Pengguna" bertujuan untuk mengembangkan sistem yang dapat memberikan rekomendasi buku berdasarkan berbagai faktor, seperti genre favorit, ulasan pengguna, popularitas, dan preferensi pribadi. Dengan menerapkan teknik berbasis data, seperti algoritma machine learning atau filtering berbasis konten dan kolaboratif, sistem ini diharapkan dapat memberikan rekomendasi yang lebih akurat dan relevan bagi setiap pengguna [[2]](https://ejournal.undip.ac.id/index.php/jmasif/article/view/31482?utm_source=chatgpt.com).
 
 
 ## Business Understanding
 
 
 ### Problem Statements
-Dengan banyaknya pilihan buku yang tersedia, pengguna sering mengalami kesulitan dalam menemukan buku yang sesuai dengan preferensi dan kebutuhan mereka. Proses pencarian ini dapat memakan waktu dan tidak selalu menghasilkan pilihan yang tepat. Oleh karena itu, diperlukan sistem yang dapat memberikan rekomendasi buku yang akurat dan relevan berdasarkan minat dan kebiasaan membaca pengguna.
+- Bagaimana cara menyajikan rekomendasi buku yang sesuai dengan preferensi pengguna?
+- Algoritma machine learning apa yang bisa membantu untuk rekomendasi buku kepada pengguna?
 
 ### Goals
 - Mengembangkan sistem rekomendasi buku yang dapat membantu pengguna menemukan buku sesuai dengan minat mereka.
-- Meningkatkan kepuasan pengguna dengan rekomendasi yang lebih personalized dan relevan.
-- Menerapkan teknik berbasis data seperti machine learning, content-based filtering, dan collaborative filtering untuk meningkatkan akurasi rekomendasi.
+- Menerapkan teknik berbasis data seperti machine learning dengan menggunakan collaborative filtering untuk meningkatkan akurasi rekomendasi.
 
 ### Solution Statements
-Untuk mengatasi permasalahan ini, proyek ini akan mengembangkan sistem rekomendasi buku dengan menggunakan berbagai teknik berbasis data. Sistem akan menganalisis faktor-faktor seperti genre favorit, buku dengan rating terbanyak, dan popularitas buku untuk menghasilkan rekomendasi yang lebih akurat. Pendekatan yang digunakan mencakup machine learning, [content-based filtering](https://www.ibm.com/think/topics/content-based-filtering?utm_source=chatgpt.com), dan [collaborative filtering](https://developers.google.com/machine-learning/recommendation/collaborative/basics), sehingga setiap pengguna dapat menerima rekomendasi buku yang sesuai dengan preferensi mereka secara lebih efisien.
+- Untuk mengatasi permasalahan ini, proyek ini akan mengembangkan sistem rekomendasi buku berbasis machine learning yang menggunakan Collaborative Filtering untuk memberikan rekomendasi buku yang lebih akurat dan personal bagi pengguna. Sistem ini menganalisis pola interaksi pengguna dengan buku, seperti riwayat pembacaan dan rating, untuk mengidentifikasi preferensi mereka. Dengan pendekatan ini, pengguna dapat menemukan buku yang sesuai dengan minat mereka, bahkan jika mereka belum pernah membaca buku serupa sebelumnya.
+
+- Untuk meningkatkan akurasi rekomendasi, sistem akan menerapkan [(Neural Collaborative Filtering (NCF))](https://medium.com/data-science-in-your-pocket/recommendation-systems-using-neural-collaborative-filtering-ncf-explained-with-codes-21a97e48a2f7) atau Matrix Factorization guna menangkap hubungan laten antara pengguna dan buku. Selain itu, model dapat diperluas dengan Hybrid Filtering, yang mengombinasikan Content-Based Filtering untuk mempertimbangkan fitur buku seperti genre, penulis, dan deskripsi.
 
 ## Data Understanding
 
@@ -65,14 +67,9 @@ Setelah melakukan observasi pada dataset yang diunduh pada kaggle, didapatakan i
 18. `state`: Negara bagian pengguna
 19. `country`: negara pengguna
 
-### Membersihkan data
-Dalam proyek ini dataset yang sudah di persiapkan selanjutkan akan dibersihkan. Pada proses _Data Cleaning_ yang dilakukan adalah seperti:
-- Menghapus kolom atau fitur yang tidak diperlukan. Fitur yang perlu dihapus yaitu `Unnamed: 0`, `img_s`, `img_m`, `img_l`
-- Mengganti tipe data pada fitur `age` dan `year_of_publication`
-- Menghapus data yang missing value. Beberapa fitur/column yang memiliki data kosong/Null/NA kita akan hapus supaya data lebih akurat/
-- Melakukan text cleaning pada data
+
 ### EDA 
-Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang bisa kita dapatkan dengan menampilkan dengan visualisasi chart.
+Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang di dapatkan dengan menampilkan dengan visualisasi chart.
 -  Top 10 dari Tahun Penerbitan, Penulis dan Buku
 
     - Berdasarkan Top 10 Tahun Penerbitan
@@ -103,9 +100,28 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
         - Pada hasil visualisai juga terlihat sebagian besar pengguna berada pada kisaran 30-34 tahun dengan jumlah pengguna terbanyak.
 
 
-
 ## Data Preparation
-1. Persiapan data untuk model KNN Item-Based.
+
+### Membersihkan data
+Dalam proyek ini dataset yang sudah di persiapkan selanjutkan akan dibersihkan. Pada proses _Data Preparation_ yang dilakukan adalah seperti:
+- Menghapus kolom atau fitur yang tidak diperlukan. 
+ Pada tahap ini menghapus fitur yang tidak diperlukan seperti fitur `Unnamed: 0`, `img_s`, `img_m`, `img_l` yang hanya berisi gambar dari sampul buku tersebut.
+- Mengganti tipe data pada fitur `age` dan `year_of_publication`
+Pada tahap ini fitur `age` dan `year_of_publication` yang sebelumnya bertipe data float64 dirubah atau diganti menjadi int64 supaya tipe data lebih sesuai.
+- Missing Value 
+Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supaya data lebih akurat. Fitur yang memiliki missing value dan perlu dihapus yaitu:
+
+|Fitur  |Total Record|
+|====== |============|
+|book_author |	1 |
+|city	|14103|
+|state	|22798|
+|country	|35374|
+
+- Melakukan Text Cleaning pada Data. 
+Pada tahap text cleaning ini membantu pembersihan text pada kolom atau fitur *Category* dan *book_title*.
+Di bagian fitur *Category* mengganti simbol | (delimiter kategori) dengan spasi sehingga kategori lebih mudah dibaca. Sedangkan di bagian *book_title* karena masih belum seragam dan mengandung karakter yang tidak diperlukan, sehingga proses pembersihan teks (text cleaning) perlu dilakukan. Tahapan yang diterapkan meliputi mengubah teks menjadi huruf kecil (lowercase), menghapus teks dalam tanda kurung siku, menghapus tautan (links), menghilangkan tanda baca (punctuation), menghilangkan links, menghilangkan tag, menghilangkan mentions pada text serta menghapus angka.
+
 Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai berikut :
 
     - Filtering data buku dengan jumlah rating >= threshold (30).
@@ -115,7 +131,7 @@ Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai be
     
     - Mengubah format data menjadi pivot tabel.
     
-      Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan diubah menjadi array m x n, dengan m sebagai jumlah buku dan n 
+      Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan diubah menjadi array m x n, dengan m sebagai jumlah buku dan n 
       sebagai jumlah pengguna. Proses ini merangkum data ke dalam pivot table, di mana judul buku menjadi indeks, ID pengguna sebagai kolom, dan rating sebagai nilai. Selanjutnya, nilai yang kosong akan diisi dengan nol. Berikut merupakan pivot tabel yang dihasilkan :
 
 
@@ -128,8 +144,8 @@ Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai be
       memori. Oleh karena itu, untuk meningkatkan efisiensi perhitungan dan mengurangi penggunaan memori, pivot tabel dikonversi ke dalam scipy sparse matrix.
     
 
-2. Persiapan data untuk model Neural Network.
-Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
+- Persiapan data untuk model Neural Network.
+    Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
 
     - Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
 
@@ -138,20 +154,13 @@ Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai b
 
     - Pembagian Data untuk Training dan Validasi.
 
-      Pada tahap ini kita akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, kita perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu 
+      Pada tahap ini akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu 
       value, lalu membuat variabel y untuk membuat rating dari hasil. Setelah itu membagi menjadi 80% data train dan 20% data validasi. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data train yaitu 785823 sampel dan jumlah sample pada data 
       validasi yaitu 196456 sampel.
 
 
 ## Modeling
-Proses modeling yang saya lakukan pada data ini adalah dengan membuat algoritma machine learning, yaitu content based filtering dan collabrative filtering. Pada proyek ini sistem rekomendasi yang dibuat menggunakan teknik collaborative filtering dengan menggunakan 2 pendekatan yaitu pendekatan Item-Based dengan algoritma K-Nearest Neighbor dan pendekatan Deep learning atau Neural Network.
-
-### Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
-Untuk membangun model ini, digunakan fungsi NearestNeighbor dari sklearn dengan parameter metriksnya yakni 'cosine' sehingga algoritma akan menghitung kesamaan cosinus antara vektor rating dan juga parameter algoritma yang digunakan untuk menghitung tetangga terdekat adalah 'brute'. Kemudian fungsi tersebut di inisialisasikan sebagai model_knn yang selanjutnya dilakukan fitting terhadap data yang berupa sparse matrix. Setelah itu dibuat fungsi recomend_book untuk memberikan rekomendasi terhadap suatu judul buku. Hasil rekomendasinya adalah seperti berikut :
-
-![KNN (KNN)](./images/knn_rekomendasi.png)
-
-Dengan model KNN, kita mendapatkan 10 buku hasil rekomendasi terhadap buku dengan judul 'shes come undone oprahs book club' dengan distance > 0.90
+Proses pemodelan pada data ini dilakukan dengan menerapkan algoritma machine learning menggunakan teknik *collaborative filtering*. Dalam proyek ini, sistem rekomendasi dikembangkan menggunakan pendekatan Item-Based Collaborative Filtering dengan algoritma Deep Learning atau Neural Network untuk meningkatkan akurasi rekomendasi.
 
 ### Dengan pendekatan Deep learning atau Neural Network.
 Untuk membangun model ini, digunakan pendekatan Deep Learning dengan Neural Network untuk menghitung skor kecocokan antara pengguna dan buku menggunakan teknik embedding.
@@ -200,9 +209,9 @@ Nilai RMSE yang diperoleh menunjukkan bahwa model memiliki kinerja yang baik dal
 
 
 ## _Referensi_
-- [1] Muhammad Yusuf Ardiansyah (8 Sep 2024), https://kumparan.com/muhammad-yusuf-ardiansyah/buku-sebagai-sarana-penting-untuk-membangun-karakter-dan-pengetahuan-23Tqe8Z1AUN/full?utm_source=chatgpt.com
-- [2] https://ejournal.undip.ac.id/index.php/jmasif/article/view/31482?utm_source=chatgpt.com
-- Jacob Murel Ph.D., https://www.ibm.com/think/topics/content-based-filtering?utm_source=chatgpt.com
+- [1] Muhammad Yusuf Ardiansyah (Sep 8 2024), https://kumparan.com/muhammad-yusuf-ardiansyah/buku-sebagai-sarana-penting-untuk-membangun-karakter-dan-pengetahuan-23Tqe8Z1AUN/full?utm_source
+- [2] https://ejournal.undip.ac.id/index.php/jmasif/article/view/31482?utm_source
+- Mehul Gupta (Jul 28, 2023), https://medium.com/data-science-in-your-pocket/recommendation-systems-using-neural-collaborative-filtering-ncf-explained-with-codes-21a97e48a2f7
 - https://developers.google.com/machine-learning/recommendation/collaborative/basics
 - https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html
 - https://www.neliti.com/publications/469572/analisis-perbandingan-model-matrix-factorization-dan-k-nearest-neighbor-dalam-me?utm_source
