@@ -112,7 +112,7 @@ Pada tahap ini fitur `age` dan `year_of_publication` yang sebelumnya bertipe dat
 Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supaya data lebih akurat. Fitur yang memiliki missing value dan perlu dihapus yaitu:
 
 |Fitur  |Total Record|
-|====== |============|
+|-------|------------|
 |book_author |	1 |
 |city	|14103|
 |state	|22798|
@@ -121,27 +121,6 @@ Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supa
 - Melakukan Text Cleaning pada Data. 
 Pada tahap text cleaning ini membantu pembersihan text pada kolom atau fitur *Category* dan *book_title*.
 Di bagian fitur *Category* mengganti simbol | (delimiter kategori) dengan spasi sehingga kategori lebih mudah dibaca. Sedangkan di bagian *book_title* karena masih belum seragam dan mengandung karakter yang tidak diperlukan, sehingga proses pembersihan teks (text cleaning) perlu dilakukan. Tahapan yang diterapkan meliputi mengubah teks menjadi huruf kecil (lowercase), menghapus teks dalam tanda kurung siku, menghapus tautan (links), menghilangkan tanda baca (punctuation), menghilangkan links, menghilangkan tag, menghilangkan mentions pada text serta menghapus angka.
-
-Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai berikut :
-
-    - Filtering data buku dengan jumlah rating >= threshold (30).
-        
-      Dari 982.278 buku dalam dataset, hanya 293.037 buku yang mendapat rating dari lebih dari 30 pengguna, sementara sisanya memiliki interaksi yang sangat sedikit atau tidak ada (sparse data). Sparse data ini sulit diprediksi dan dapat menimbulkan noise. Untuk 
-      mengatasi hal ini serta mencegah memory error, dilakukan filtering dengan hanya menyertakan buku yang memiliki rating dari lebih dari 30 pengguna. Setelah proses ini, jumlah data yang digunakan menjadi 293.037 buku dan sudah cukup untuk membuat model rekomendasi.
-    
-    - Mengubah format data menjadi pivot tabel.
-    
-      Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan diubah menjadi array m x n, dengan m sebagai jumlah buku dan n 
-      sebagai jumlah pengguna. Proses ini merangkum data ke dalam pivot table, di mana judul buku menjadi indeks, ID pengguna sebagai kolom, dan rating sebagai nilai. Selanjutnya, nilai yang kosong akan diisi dengan nol. Berikut merupakan pivot tabel yang dihasilkan :
-
-
-    ![pivot tabel (pivot tabel)](./images/pivot_table.png)
-
-
-    - Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.
-      
-      Pivot tabel yang dihasilkan memiliki ukuran 3602 x 46833 dan dapat dikategorikan sebagai sparse matrix, yaitu matriks dengan sebagian besar nilai nol. Menggunakan seluruh data dalam format float32 untuk model KNN akan sangat tidak efisien dan memakan banyak     
-      memori. Oleh karena itu, untuk meningkatkan efisiensi perhitungan dan mengurangi penggunaan memori, pivot tabel dikonversi ke dalam scipy sparse matrix.
     
 
 - Persiapan data untuk model Neural Network.
