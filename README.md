@@ -105,10 +105,15 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
 ### Membersihkan data
 Dalam proyek ini dataset yang sudah di persiapkan selanjutkan akan dibersihkan. Pada proses _Data Preparation_ yang dilakukan adalah seperti:
 - Menghapus kolom atau fitur yang tidak diperlukan. 
+
  Pada tahap ini menghapus fitur yang tidak diperlukan seperti fitur `Unnamed: 0`, `img_s`, `img_m`, `img_l` yang hanya berisi gambar dari sampul buku tersebut.
+
 - Mengganti tipe data pada fitur `age` dan `year_of_publication`
+
 Pada tahap ini fitur `age` dan `year_of_publication` yang sebelumnya bertipe data float64 dirubah atau diganti menjadi int64 supaya tipe data lebih sesuai.
+
 - Missing Value 
+
 Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supaya data lebih akurat. Fitur yang memiliki missing value dan perlu dihapus yaitu:
 
 |Fitur  |Total Record|
@@ -118,11 +123,13 @@ Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supa
 |state	|22798|
 |country	|35374|
 
-- Melakukan Text Cleaning pada Data. 
+- Melakukan Text Cleaning pada Data.
+
 Pada tahap text cleaning ini membantu pembersihan text pada kolom atau fitur *Category* dan *book_title*.
 Di bagian fitur *Category* mengganti simbol | (delimiter kategori) dengan spasi sehingga kategori lebih mudah dibaca. Sedangkan di bagian *book_title* karena masih belum seragam dan mengandung karakter yang tidak diperlukan, sehingga proses pembersihan teks (text cleaning) perlu dilakukan. Tahapan yang diterapkan meliputi mengubah teks menjadi huruf kecil (lowercase), menghapus teks dalam tanda kurung siku, menghapus tautan (links), menghilangkan tanda baca (punctuation), menghilangkan links, menghilangkan tag, menghilangkan mentions pada text serta menghapus angka.
     
 - Persiapan data untuk model Neural Network.
+
     Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
 
     - Melakukan Proses Encoding Fitur `user_id` dan `isbn` ke dalam indeks integer.
