@@ -102,7 +102,7 @@ Pada proyek ini data akan di explore lebih jauh untuk melihat hasil analisa yang
 
 ## Data Preparation
 
-### Membersihkan data
+### Membersihkan Data
 Dalam proyek ini dataset yang sudah di persiapkan selanjutkan akan dibersihkan. Pada proses _Data Preparation_ yang dilakukan adalah seperti:
 - Menghapus kolom atau fitur yang tidak diperlukan. 
 
@@ -128,7 +128,7 @@ Beberapa fitur/column yang memiliki data kosong/Null/NA. Data akan di hapus supa
 Pada tahap text cleaning ini membantu pembersihan text pada kolom atau fitur *Category* dan *book_title*.
 Di bagian fitur *Category* mengganti simbol | (delimiter kategori) dengan spasi sehingga kategori lebih mudah dibaca. Sedangkan di bagian *book_title* karena masih belum seragam dan mengandung karakter yang tidak diperlukan, sehingga proses pembersihan teks (text cleaning) perlu dilakukan. Tahapan yang diterapkan meliputi mengubah teks menjadi huruf kecil (lowercase), menghapus teks dalam tanda kurung siku, menghapus tautan (links), menghilangkan tanda baca (punctuation), menghilangkan links, menghilangkan tag, menghilangkan mentions pada text serta menghapus angka.
     
-- Persiapan data untuk model Neural Network.
+### Persiapan data untuk model Neural Network.
 
     Pada persiapan data untuk model Neural Network, terdiri dari 2 tahapan sebagai berikut :
 
